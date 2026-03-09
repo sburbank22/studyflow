@@ -23,3 +23,5 @@ https://studyflowmidtermsite.netlify.app
 
 ## Studyflow GitHub Repository
 https://github.com/sburbank22/studyflow
+
+(This project is being developed as a mid-term web application project.)
