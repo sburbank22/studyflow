@@ -10,17 +10,17 @@
 }
 
 :root {
-  --color-bg: #f5f7ff;
+  --color-bg: #f3f5f0;
   --color-surface: #ffffff;
-  --color-primary: #4f46e5;
-  --color-primary-light: #818cf8;
-  --color-accent: #06b6d4;
-  --color-urgent: #ef4444;
-  --color-text: #1e1b4b;
+  --color-primary: #4a7c59;
+  --color-primary-light: #82b195;
+  --color-accent: #6fae82;
+  --color-urgent: #d64e4e;
+  --color-text: #1e2d20;
   --color-muted: #6b7280;
-  --color-border: #e0e7ff;
+  --color-border: #d1dece;
   --radius: 12px;
-  --shadow: 0 4px 24px rgba(79, 70, 229, 0.08);
+  --shadow: 0 4px 24px rgba(74, 124, 89, 0.08);
   --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
@@ -91,7 +91,7 @@ body {
 }
 
 .btn-nav:hover {
-  background: #4338ca !important;
+  background: #3a6347 !important;
 }
 
 /* --- Hero Section --- */
@@ -112,7 +112,7 @@ body {
 
 .hero-tag {
   display: inline-block;
-  background: #ede9fe;
+  background: #ddeadf;
   color: var(--color-primary);
   font-size: 0.8rem;
   font-weight: 600;
@@ -163,7 +163,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: #4338ca;
+  background: #3a6347;
   transform: translateY(-1px);
 }
 
@@ -212,7 +212,7 @@ body {
 }
 
 .badge {
-  background: #ede9fe;
+  background: #ddeadf;
   color: var(--color-primary);
   font-size: 0.75rem;
   padding: 0.2rem 0.6rem;
@@ -232,7 +232,7 @@ body {
 }
 
 .task-item:hover {
-  background: #ede9fe;
+  background: #ddeadf;
 }
 
 .task-item.urgent .task-dot {
@@ -318,7 +318,7 @@ body {
 
 .feature-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(79, 70, 229, 0.13);
+  box-shadow: 0 8px 32px rgba(74, 124, 89, 0.14);
 }
 
 .feature-icon {
@@ -427,7 +427,7 @@ body {
 
 .tl-class-tag {
   font-size: 0.72rem;
-  background: #ede9fe;
+  background: #ddeadf;
   color: var(--color-primary);
   padding: 0.2rem 0.5rem;
   border-radius: 6px;
