@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyFlow</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-logo">
+        <span class="logo-icon">📚</span>
+        <span class="logo-text">StudyFlow</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#" class="btn-nav">Get Started</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-tag">Built for students</span>
+        <h1 class="hero-title">Stay on top of every <span class="highlight">deadline</span></h1>
+        <p class="hero-desc">
+          StudyFlow helps you track assignments, manage due dates, and stay organized
+          throughout the semester — so nothing slips through the cracks.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" id="startBtn">Start Planning</button>
+          <button class="btn-secondary">See How It Works</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="card-preview">
+          <div class="card-header">
+            <span>This Week</span>
+            <span class="badge">3 due</span>
+          </div>
+          <div class="task-item urgent">
+            <span class="task-dot"></span>
+            <div class="task-info">
+              <span class="task-name">Research Paper Draft</span>
+              <span class="task-due">Due Tomorrow</span>
+            </div>
+            <span class="task-class">ENG 301</span>
+          </div>
+          <div class="task-item">
+            <span class="task-dot"></span>
+            <div class="task-info">
+              <span class="task-name">Problem Set 4</span>
+              <span class="task-due">Due in 3 days</span>
+            </div>
+            <span class="task-class">MATH 210</span>
+          </div>
+          <div class="task-item">
+            <span class="task-dot"></span>
+            <div class="task-info">
+              <span class="task-name">Lab Report</span>
+              <span class="task-due">Due in 5 days</span>
+            </div>
+            <span class="task-class">BIO 101</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <h2 class="section-title">Everything you need to stay organized</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3>Assignment Tracker</h3>
+          <p>Add assignments with due dates, class names, and priority levels. Never forget what's due next.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⏰</div>
+          <h3>Deadline Alerts</h3>
+          <p>Get visual reminders when deadlines are approaching so you always have time to prepare.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>Weekly Overview</h3>
+          <p>See your entire week at a glance. Plan your study sessions around what matters most.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✅</div>
+          <h3>Progress Tracking</h3>
+          <p>Mark assignments complete and watch your workload shrink. Stay motivated all semester long.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Demo Section -->
+    <section class="demo" id="demo">
+      <h2 class="section-title">Try it out</h2>
+      <p class="section-sub">Add a sample assignment to see how StudyFlow works.</p>
+      <div class="demo-box">
+        <form class="task-form" id="taskForm">
+          <input type="text" id="taskName" placeholder="Assignment name" required />
+          <input type="text" id="taskClass" placeholder="Class (e.g. ENG 301)" required />
+          <input type="date" id="taskDue" required />
+          <button type="submit" class="btn-primary">Add Assignment</button>
+        </form>
+        <ul class="task-list" id="taskList">
+          <!-- Tasks will appear here -->
+        </ul>
+        <p class="empty-state" id="emptyState">No assignments yet — add one above!</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>📚 StudyFlow &mdash; Made for students, by students.</p>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
