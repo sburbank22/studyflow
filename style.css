@@ -450,6 +450,29 @@ body {
   color: var(--color-urgent);
 }
 
+.tl-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.tl-check {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.task-list-item.completed .tl-name {
+  text-decoration: line-through;
+  color: var(--color-muted);
+}
+
+.task-list-item.completed .tl-meta {
+  color: var(--color-muted) !important;
+}
+
 .empty-state {
   text-align: center;
   color: var(--color-muted);

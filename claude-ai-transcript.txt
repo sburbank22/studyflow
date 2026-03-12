@@ -1,0 +1,35 @@
+AI Transcript – StudyFlow Project Setup
+
+Tool Used: Claude Code Terminal
+
+Note:
+The earlier conversation session ended when the terminal was closed, so the
+export only includes the most recent session screen which as you can see with my first submission attempt, when the conversation was blank because I accidentally let the terminal close before exporting. I hope this is ok because I couldn't figure out how to find the transcript in sessions. I just explained what I asked and what claude did for me.
+
+Transcript:
+
+Prompt:
+Help me create a simple Vite web project for a student planner app called StudyFlow. I need a custom landing page using HTML, CSS, and JavaScript. The landing page should include the title “StudyFlow”, a short description explaining that it helps students track assignments and deadlines, and some basic custom styling so it doesn’t look like the default starter page.
+
+Response:
+Claude generated the initial project structure including index.html, main.js, style.css, package.json, and package-lock.json. The landing page included a navigation bar, hero section introducing StudyFlow, a feature section explaining what the app will do, and a demo assignment form. The layout used cards and buttons with a purple themed design and responsive styling.
+
+Prompt:
+Update the styling of my StudyFlow landing page. I want the site to look more polished please. Improve the design with better spacing, cleaner buttons, and hover effects while keeping the layout the same.
+
+Response:
+Claude updated the CSS styling to improve the visual layout of the page. This included better spacing between sections, styled cards for the feature areas, improved buttons, and hover animations to make the page feel more interactive.
+
+Prompt:
+Update the styling again so the color theme is more earthy and green instead of purple. Use soft greens, sage tones, and neutral colors so the site feels calm and clean like a productivity or study app.
+
+Response:
+Claude modified the styles to use green and neutral tones for the overall design. The background colors, buttons, and accent elements were updated to use green shades and softer neutral colors. The layout and functionality remained the same while the visual theme was improved.
+
+Prompt:
+Make sure the page still clearly shows the StudyFlow title and description and keeps the layout the same.
+
+Response:
+Claude confirmed the layout and functionality stayed the same while applying the new styling theme.
+
+After generating the project files and updating the styling, the project was committed to GitHub and deployed to Netlify so the site could be accessed publicly.
