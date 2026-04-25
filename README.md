@@ -42,6 +42,9 @@ The application stores all data locally using localStorage, allowing tasks to pe
 <img width="1295" height="764" alt="Screenshot 2026-04-25 at 5 27 42 PM" src="https://github.com/user-attachments/assets/85575e34-34bf-410b-9e64-98a50c04c7e7" />
 
 
+
+
+
 <img width="1294" height="762" alt="Screenshot 2026-04-25 at 5 32 48 PM" src="https://github.com/user-attachments/assets/1b4a24e0-036f-410c-b1fe-55cdd59fcfca" />
 
 ---
