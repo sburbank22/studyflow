@@ -4,6 +4,9 @@ const form = document.getElementById('taskForm');
 const taskList = document.getElementById('taskList');
 const emptyState = document.getElementById('emptyState');
 const startBtn = document.getElementById('startBtn');
+const thisWeekList = document.getElementById('thisWeekList');
+const thisWeekBadge = document.getElementById('thisWeekBadge');
+const thisWeekEmpty = document.getElementById('thisWeekEmpty');
 
 // --- localStorage helpers ---
 
@@ -52,6 +55,60 @@ function updateProgress() {
   summary.classList.toggle('hidden', total === 0);
 }
 
+// Return the Sunday-to-Saturday date strings for the current week (YYYY-MM-DD, local time)
+function getWeekRange() {
+  const today = new Date();
+  const day = today.getDay();
+
+  const startDate = new Date(today);
+  startDate.setDate(today.getDate() - day);
+
+  const endDate = new Date(startDate);
+  endDate.setDate(startDate.getDate() + 6);
+
+  const fmt = d =>
+    d.getFullYear() + '-' +
+    String(d.getMonth() + 1).padStart(2, '0') + '-' +
+    String(d.getDate()).padStart(2, '0');
+
+  return { startStr: fmt(startDate), endStr: fmt(endDate) };
+}
+
+// Update the "This Week" hero card from current localStorage state
+function renderThisWeek() {
+  const { startStr, endStr } = getWeekRange();
+  const weekTasks = loadTasks()
+    .filter(t => !!t.dueDate && t.dueDate >= startStr && t.dueDate <= endStr)
+    .sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+
+  thisWeekBadge.textContent = weekTasks.length + ' due';
+  thisWeekList.innerHTML = '';
+
+  if (weekTasks.length === 0) {
+    thisWeekEmpty.classList.remove('hidden');
+    return;
+  }
+
+  thisWeekEmpty.classList.add('hidden');
+  weekTasks.slice(0, 4).forEach(task => {
+    const dueLabelStr = formatDueDate(task.dueDate);
+    const isUrgent = dueLabelStr === 'Due Today' || dueLabelStr === 'Due Tomorrow' || dueLabelStr === 'Overdue';
+    const div = document.createElement('div');
+    div.classList.add('task-item');
+    if (isUrgent) div.classList.add('urgent');
+    if (task.completed) div.style.opacity = '0.5';
+    div.innerHTML = `
+      <span class="task-dot"></span>
+      <div class="task-info">
+        <span class="task-name">${escapeHtml(task.name)}</span>
+        <span class="task-due">${dueLabelStr}</span>
+      </div>
+      <span class="task-class">${escapeHtml(task.className)}</span>
+    `;
+    thisWeekList.appendChild(div);
+  });
+}
+
 // Render a single task object as a list item
 function renderTask(task) {
   emptyState.classList.add('hidden');
@@ -93,6 +150,7 @@ function renderTask(task) {
     if (t) t.completed = task.completed;
     saveTasks(tasks);
     updateProgress();
+    renderThisWeek();
   });
 
   // Remove task
@@ -101,6 +159,7 @@ function renderTask(task) {
     const tasks = loadTasks().filter(t => t.id !== task.id);
     saveTasks(tasks);
     updateProgress();
+    renderThisWeek();
     if (taskList.children.length === 0) emptyState.classList.remove('hidden');
   });
 
@@ -130,20 +189,30 @@ form.addEventListener('submit', (e) => {
   document.getElementById('taskName').focus();
 });
 
-// Clear the list and re-render all tasks sorted by due date
+const PRIORITY_ORDER = { high: 0, medium: 1, low: 2 };
+
+// Clear the list and re-render all tasks sorted by priority then due date
 function renderAllTasks() {
   taskList.innerHTML = '';
   const tasks = loadTasks();
   if (tasks.length === 0) {
     emptyState.classList.remove('hidden');
     updateProgress();
+    renderThisWeek();
     return;
   }
   tasks
     .slice()
-    .sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate))
+    .sort((a, b) => {
+      if (a.completed !== b.completed) return a.completed ? 1 : -1;
+      const pa = PRIORITY_ORDER[a.priority || 'medium'];
+      const pb = PRIORITY_ORDER[b.priority || 'medium'];
+      if (pa !== pb) return pa - pb;
+      return new Date(a.dueDate) - new Date(b.dueDate);
+    })
     .forEach(renderTask);
   updateProgress();
+  renderThisWeek();
 }
 
 // Render all saved tasks on page load

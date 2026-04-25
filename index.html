@@ -41,32 +41,10 @@
       <div class="card-preview">
         <div class="card-header">
           <span>This Week</span>
-          <span class="badge">3 due</span>
+          <span class="badge" id="thisWeekBadge">0 due</span>
         </div>
-        <div class="task-item urgent">
-          <span class="task-dot"></span>
-          <div class="task-info">
-            <span class="task-name">Research Paper Draft</span>
-            <span class="task-due">Due Tomorrow</span>
-          </div>
-          <span class="task-class">ENG 301</span>
-        </div>
-        <div class="task-item">
-          <span class="task-dot"></span>
-          <div class="task-info">
-            <span class="task-name">Problem Set 4</span>
-            <span class="task-due">Due in 3 days</span>
-          </div>
-          <span class="task-class">MATH 210</span>
-        </div>
-        <div class="task-item">
-          <span class="task-dot"></span>
-          <div class="task-info">
-            <span class="task-name">Lab Report</span>
-            <span class="task-due">Due in 5 days</span>
-          </div>
-          <span class="task-class">BIO 101</span>
-        </div>
+        <div id="thisWeekList"></div>
+        <p class="empty-state" id="thisWeekEmpty">No tasks due this week — you're all set!</p>
       </div>
     </div>
   </section>
