@@ -104,11 +104,37 @@
     <p class="section-sub">Add a sample assignment to see how StudyFlow works.</p>
     <div class="demo-box">
       <form class="task-form" id="taskForm">
-        <input type="text" id="taskName" placeholder="Assignment name" required />
+        <input type="text" id="taskName" placeholder="Assignment name" class="form-full" required />
         <input type="text" id="taskClass" placeholder="Class (e.g. ENG 301)" required />
+        <select id="taskPriority">
+          <option value="low">Low Priority</option>
+          <option value="medium" selected>Medium Priority</option>
+          <option value="high">High Priority</option>
+        </select>
         <input type="date" id="taskDue" required />
-        <button type="submit" class="btn-primary">Add Assignment</button>
+        <button type="submit" class="btn-primary">Add</button>
       </form>
+
+      <div class="progress-summary hidden" id="progressSummary">
+        <div class="progress-stats">
+          <div class="stat">
+            <span class="stat-num" id="statTotal">0</span>
+            <span class="stat-label">Total</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num stat-done" id="statCompleted">0</span>
+            <span class="stat-label">Done</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num stat-left" id="statRemaining">0</span>
+            <span class="stat-label">Left</span>
+          </div>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+        </div>
+      </div>
+
       <ul class="task-list" id="taskList">
         <!-- Tasks will appear here -->
       </ul>
