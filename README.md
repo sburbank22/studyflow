@@ -1,58 +1,91 @@
 # StudyFlow
 
-StudyFlow is a simple study tracker web application designed to help students keep track of assignments and upcoming deadlines. Users can add assignments with a class name and due date, mark them as complete, and remove them once finished. Assignments are automatically sorted by due date so the most urgent work appears first.
+**Live Site:** https://studyflowmidtermsite.netlify.app  
+**GitHub Repo:** https://github.com/sburbank22/studyflow  
 
-The application stores all data locally in the browser using localStorage, allowing tasks to persist even after the page is refreshed.
+---
 
-## Live Demo
+## Overview
 
-https://studyflowmidtermsite.netlify.app
+StudyFlow is a responsive study planner web application designed to help students organize and track assignments and deadlines. Users can create, manage, and complete tasks while viewing upcoming work in a clean, intuitive interface.
 
-## Technologies Used
+The application stores all data locally using localStorage, allowing tasks to persist even after refreshing the page.
 
-- HTML
-- CSS
-- JavaScript
-- localStorage (for persistent data)
-- Vite (local development server)
-- Netlify (deployment)
-- Claude Code (AI-assisted development)
+---
 
 ## Features
 
-- Add assignments with name, class, and due date
-- Display assignments in a dynamic task list
-- Mark assignments complete or incomplete
-- Delete assignments
-- Automatically sort assignments by due date
-- Persist assignments using browser localStorage
+- Add, edit, and delete assignments  
+- Mark assignments as complete or incomplete  
+- Persistent data using localStorage  
+- Sort assignments by priority (High, Medium, Low) and due date  
+- Dynamic “This Week” section showing upcoming assignments  
+- Task progress summary (total, completed, remaining)  
+- Responsive design for desktop and mobile  
+
+---
+
+## Technologies Used
+
+- HTML  
+- CSS  
+- JavaScript  
+- localStorage  
+- Vite (local development server)  
+- Netlify (deployment)  
+- Claude Code (AI-assisted development)  
+
+---
 
 ## Setup Instructions
 
-1. Clone the repository:
+Clone the repository:
 
 git clone https://github.com/sburbank22/studyflow.git
 
-2. Navigate into the project folder:
+Navigate into the project folder:
 
 cd studyflow
 
-3. Install dependencies:
+Install dependencies:
 
 npm install
 
-4. Start the development server:
+Start the development server:
 
 npm run dev
 
-5. Open the local development URL shown in the terminal (usually http://localhost:5173).
+Open the local development URL shown in the terminal (usually http://localhost:5173).
 
-## Known Bugs / Limitations
+---
 
-- Tasks are stored locally in the browser and will not sync across devices.
-- If localStorage is manually cleared in the browser, all saved assignments will be lost.
-- The application currently does not support editing existing tasks, only completing or deleting them.
+## Known Limitations
+
+- Tasks are stored locally and do not sync across devices  
+- Clearing browser storage will remove saved assignments  
+- Does not currently include user accounts or cloud storage  
+
+---
 
 ## What I Learned
 
-While building StudyFlow I learned how to use AI tools like Claude Code as part of the development process. Instead of asking AI to generate a full application at once, I used it iteratively to plan features, implement functionality, and debug issues as they appeared. For example, Claude helped me diagnose a problem where the form kept refreshing because the module script was not loading when opening the file locally. Through this process I learned how to guide AI with clear prompts, evaluate its suggestions, and combine them with my own decisions to build a working application.
+While building StudyFlow, I strengthened my skills in JavaScript, particularly with DOM manipulation, event handling, and data persistence using localStorage. I also learned how to debug issues in a real development environment, such as resolving problems with module scripts and local development servers.
+
+This project also helped me better understand how to use AI tools like Claude Code effectively. Instead of relying on AI to generate everything at once, I used it iteratively to plan features, implement functionality, and troubleshoot issues, while still making my own decisions and adjustments throughout the process.
+
+---
+
+## What I Would Improve
+
+If I continued developing StudyFlow, I would:
+
+- Add user authentication for saving tasks across devices  
+- Replace localStorage with a backend database  
+- Add filtering and categorization for assignments  
+- Improve the UI with more interactive elements and animations  
+
+---
+
+## Project Notes
+
+This project was developed as part of an AI coding course, focusing on building, refining, and polishing a real-world application while incorporating AI-assisted development workflows.
